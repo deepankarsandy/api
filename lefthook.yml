@@ -1,0 +1,18 @@
+# lefthook.yml
+pre-commit:
+  parallel: true
+  commands:
+    - lint:
+        glob: "*.{js,ts,tsx}"
+        run: bun run lint:fix {staged_files}
+    - format:
+        glob: "*.{js,ts,tsx,json,md}"
+        run: bun run format {staged_files}
+pre-push:
+  commands:
+    - lint:
+        run: bun run lint
+post-commit:
+  commands:
+    - show-changes:
+        run: git show

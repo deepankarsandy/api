@@ -1,12 +1,15 @@
 ### Goal
+
 - setup a new api app with bun and elysia framework. see https://elysiajs.com/
 - use typescript
 - setup formatting, linting and testing
 - Setup CQRS pattern with clean architecture, create dirs
 
 ### Architecture - Clean Architecture (with CQRS-style handlers)
+
 - Not full CQRS but Hexagonal Architecture/Ports & Adapters
 - Recommended structure
+
 ```
 src
  ├ domain
@@ -36,7 +39,9 @@ src
      ├ errors
      └ utils
 ```
+
 - Example request flow
+
 ```
 POST /users
       ↓
@@ -52,6 +57,7 @@ PrismaUserRepository (infra)
       ↓
 Database
 ```
+
 - Use DI, create one container and use decorator to initialize it and consume thru constructor
 - add structure to easily created versioned apis later if needed, current setup is to prefix all with /api/v1/
 - setup to create openapi docs and swagger for apis from types using elysia plugin.
