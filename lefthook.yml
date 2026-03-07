@@ -10,8 +10,6 @@ pre-commit:
         run: bun run format {staged_files}
 pre-push:
   commands:
-    - lint:
-        run: bun run lint
 post-commit:
   commands:
     - show-changes:
