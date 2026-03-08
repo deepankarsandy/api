@@ -29,6 +29,28 @@ describe("User Flow E2E", () => {
     const data = await res.json();
 
     expect(res.status).toBe(200);
-    expect(data.email).toBe(email);
+    expect(data.data.email).toBe(email);
+  });
+
+  test("should return standardized error format on validation error", async () => {
+    const res = await app.handle(
+      new Request("http://localhost/api/v1/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: 123,
+          email: "invalid-email",
+        }),
+      }),
+    );
+    const data = await res.json();
+
+    expect(res.status).toBe(422);
+    expect(data).toHaveProperty("error");
+    expect(data).toHaveProperty("code", "VALIDATION");
+    expect(data).toHaveProperty("message");
+    expect(data).toHaveProperty("status", 422);
   });
 });
