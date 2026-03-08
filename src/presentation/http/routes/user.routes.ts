@@ -1,6 +1,7 @@
 import { UserController } from "@controllers/user.controller";
 import { Elysia, t } from "elysia";
 import { container } from "tsyringe";
+import { CreateUserBody, GetUserParams } from "@/presentation/schemas/user.schema";
 
 const userController = container.resolve(UserController);
 
@@ -12,14 +13,9 @@ export const userRoutes = new Elysia()
       set.status = 201;
     },
     {
-      body: t.Object({
-        name: t.String({ minLength: 1 }),
-        email: t.String({ format: "email" }),
-      }),
+      body: CreateUserBody,
     },
   )
   .get("/users/:email", ({ params }) => userController.getUserByEmail(params.email), {
-    params: t.Object({
-      email: t.String(),
-    }),
+    params: GetUserParams,
   });
