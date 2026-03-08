@@ -1,7 +1,10 @@
 # Architecture - Clean Architecture (with CQRS-style handlers)
 
-- Not full CQRS but Hexagonal Architecture/Ports & Adapters
-- Recommended structure
+- Style: Hexagonal Architecture (Ports & Adapters) with CQRS-style command/query handlers
+- Scope: not full CQRS/event sourcing; focused on separation of concerns and testability
+- Runtime: Bun + Elysia + TypeScript + tsyringe (DI)
+- Import strategy: `@/...` aliases mapped to `src/*` (plus layer aliases like `@application/*`, `@domain/*`, etc.)
+- Naming strategy: kebab-case + file type suffix (for example `create-user.command.ts`, `user.controller.ts`)
 
 ```
 src
@@ -12,8 +15,11 @@ src
  │
  ├ application
  │   ├ commands
+ │   │   └ <entity> (e.g. `user/`)
  │   ├ queries
+ │   │   └ <entity> (e.g. `user/`)
  │   ├ handlers
+ │   │   └ <entity> (e.g. `user/`)
  │   └ services
  │
  ├ infrastructure
@@ -33,7 +39,18 @@ src
      └ utils
 ```
 
-- Example request flow
+- Current implementation notes
+
+- API base path is versioned: `/api/v1/*`
+- OpenAPI/Swagger is exposed through `@elysiajs/swagger`
+- Core middleware/plugins are enabled: JSON parsing (default in Elysia), CORS, and centralized `.onError(...)`
+- Health check endpoint: `GET /api/v1/health`
+- User persistence is currently in-memory only via `UserRepository` (array-backed). Database adapter will replace this later without changing application/domain contracts.
+- Dependency injection is centralized in `src/shared/container.ts`; handlers/controllers consume dependencies via constructor injection.
+- Tests live only under `__tests__` folders and use typed suffixes: `.test.unit.ts`, `.test.integration.ts`, `.test.e2e.ts`.
+- Naming and directory conventions are documented in `CONVENTIONS.md`.
+
+- Request flow (current)
 
 ```
 POST /users
@@ -44,15 +61,17 @@ CreateUserCommand
       ↓
 CreateUserHandler
       ↓
-UserRepository (interface)
+IUserRepository (domain port)
       ↓
-PrismaUserRepository (infra)
+UserRepository (in-memory adapter in infrastructure)
+```
+
+- Planned replacement flow (future)
+
+```
+IUserRepository
+      ↓
+PrismaUserRepository (or other DB adapter)
       ↓
 Database
 ```
-
-- Use DI, create one container and use decorator to initialize it and consume thru constructor
-- add structure to easily created versioned apis later if needed, current setup is to prefix all with /api/v1/
-- setup to create openapi docs and swagger for apis from types using elysia plugin.
-- add basic json parsing, cors handler, error handling plugins/middlewares that is needed for basic api
-- create 1 basic health endpoint for test
