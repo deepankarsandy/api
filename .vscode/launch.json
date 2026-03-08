@@ -3,23 +3,26 @@
   "configurations": [
     {
       "name": "API: Debug Server (Bun)",
-      "type": "node",
+      "type": "bun",
       "request": "launch",
-      "runtimeExecutable": "bun",
-      "runtimeArgs": ["--inspect-brk", "run", "src/index.ts"],
+      "program": "${workspaceFolder}/src/index.ts",
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
-      "skipFiles": ["<node_internals>/**"]
+      "stopOnEntry": false,
+      "watchMode": false,
+      "env": {
+        "PORT": "3001"
+      }
     },
     {
       "name": "API: Debug Current Test (Bun)",
-      "type": "node",
+      "type": "bun",
       "request": "launch",
-      "runtimeExecutable": "bun",
-      "runtimeArgs": ["--inspect-brk", "test", "${file}"],
+      "program": "${file}",
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
-      "skipFiles": ["<node_internals>/**"]
+      "stopOnEntry": false,
+      "watchMode": false,
+      "env": {},
+      "runtimeArgs": ["test"]
     }
   ]
 }
