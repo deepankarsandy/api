@@ -4,14 +4,19 @@ import { dirname } from "node:path";
 import { drizzle } from "drizzle-orm/bun-sqlite";
 import * as schema from "./schema";
 
-const databaseUrl = process.env.DATABASE_URL ?? "./data/app.db";
+const inMemoryDb = (process.env.IN_MEMORY_DB ?? "false").toLowerCase() === "true";
+const databaseUrl = inMemoryDb ? ":memory:" : process.env.DATABASE_URL;
+
+if (!databaseUrl) {
+  throw new Error("DATABASE_URL is required when IN_MEMORY_DB is not set to true.");
+}
 
 if (databaseUrl !== ":memory:") {
   mkdirSync(dirname(databaseUrl), { recursive: true });
 }
 
 const sqlite = new Database(databaseUrl, { create: true });
-sqlite.exec("PRAGMA foreign_keys = ON;");
+sqlite.run("PRAGMA foreign_keys = ON;");
 
 const expectedUserColumns = [
   "id",
@@ -60,15 +65,15 @@ const shouldRecreateProfilesTable =
   );
 
 if (shouldRecreateUsersTable) {
-  sqlite.exec(`
+  sqlite.run(`
     DROP TABLE IF EXISTS user_profiles;
     DROP TABLE IF EXISTS users;
   `);
 } else if (shouldRecreateProfilesTable) {
-  sqlite.exec("DROP TABLE IF EXISTS user_profiles;");
+  sqlite.run("DROP TABLE IF EXISTS user_profiles;");
 }
 
-sqlite.exec(`
+sqlite.run(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     email TEXT NOT NULL,

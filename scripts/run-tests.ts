@@ -36,7 +36,14 @@ const run = async () => {
   }
 
   const command = ["bun", "test", ...extraArgs, ...Array.from(files).sort()];
-  const result = Bun.spawnSync(command, { stdout: "inherit", stderr: "inherit" });
+  const result = Bun.spawnSync(command, {
+    stdout: "inherit",
+    stderr: "inherit",
+    env: {
+      ...process.env,
+      IN_MEMORY_DB: "true",
+    },
+  });
 
   process.exit(result.exitCode);
 };
