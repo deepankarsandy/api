@@ -1,7 +1,12 @@
 import { UserController } from "@controllers/user.controller";
-import { Elysia, t } from "elysia";
+import { Elysia } from "elysia";
 import { container } from "tsyringe";
-import { CreateUserBody, GetUserParams } from "@/presentation/schemas/user.schema";
+import {
+  CreateUserBody,
+  CreateUserSuccessResponse,
+  GetUserParams,
+  GetUserSuccessResponse,
+} from "@/presentation/schemas/user.schema";
 
 const userController = container.resolve(UserController);
 
@@ -11,11 +16,24 @@ export const userRoutes = new Elysia()
     async ({ body, set }) => {
       await userController.createUser(body);
       set.status = 201;
+      return { data: null };
     },
     {
       body: CreateUserBody,
+      response: {
+        201: CreateUserSuccessResponse,
+      },
     },
   )
-  .get("/users/:email", ({ params }) => userController.getUserByEmail(params.email), {
-    params: GetUserParams,
-  });
+  .get(
+    "/users/:email",
+    async ({ params }) => ({
+      data: await userController.getUserByEmail(params.email),
+    }),
+    {
+      params: GetUserParams,
+      response: {
+        200: GetUserSuccessResponse,
+      },
+    },
+  );

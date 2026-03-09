@@ -30,8 +30,18 @@ export class UserController {
     }
   }
 
-  async getUserByEmail(email: string): Promise<User | null> {
+  async getUserByEmail(email: string): Promise<User> {
     const query = new GetUserByEmailQuery(email);
-    return this.getUserByEmailHandler.handle(query);
+    const user = await this.getUserByEmailHandler.handle(query);
+
+    if (!user) {
+      throw new AppError("User not found", {
+        message: ERROR_MESSAGES.USER_NOT_FOUND,
+        code: ERROR_CODES.USER_NOT_FOUND,
+        status: 404,
+      });
+    }
+
+    return user;
   }
 }

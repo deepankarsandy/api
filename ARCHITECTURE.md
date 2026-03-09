@@ -46,6 +46,7 @@ src
 - Core middleware/plugins are enabled: JSON parsing (default in Elysia), CORS, and centralized `.onError(...)`
 - Health check endpoint: `GET /api/v1/health`
 - User persistence is database-backed via Drizzle ORM + SQLite using `UserRepository` as infrastructure adapter.
+- `GET /api/v1/users/:email` returns user with `profiles[]` from `user_profiles` relation.
 - Dependency injection is centralized in `src/shared/container.ts`; handlers/controllers consume dependencies via constructor injection.
 - Tests live only under `__tests__` folders and use typed suffixes: `.test.unit.ts`, `.test.integration.ts`, `.test.e2e.ts`.
 - Naming and directory conventions are documented in `CONVENTIONS.md`.
@@ -73,7 +74,7 @@ src/infrastructure/database
  ├ client.ts                  # SQLite connection + Drizzle instance
  ├ schema
  │   ├ index.ts               # schema export barrel
- │   └ user.schema.ts         # users table schema
+ │   └ user.schema.ts         # users + user_profiles schemas and relations
  └ migrations                 # drizzle-kit generated SQL migrations
 ```
 
@@ -94,3 +95,6 @@ src/infrastructure/database
   - `bun run db:studio`
 - Keep all table definitions in `src/infrastructure/database/schema` to avoid schema logic inside repositories.
 - Repositories should only consume `db` + table schemas and still implement domain interfaces (`IUserRepository`), so application/domain layers remain unchanged.
+- Role constants live in `src/domain/constants/user-role.constant.ts` with allowed values: `admin`, `user`, `moderator`, `super_admin`.
+- Current create-user flow only persists minimum user data (`email`) and backend defaults (`role=admin`, flags/timestamps/password defaults). Profile rows are intentionally created in a separate flow.
+- Profile rows store `firstName` (required), `middleName` (optional), and `lastName` (optional). API responses include computed `profile.name` as concatenated full name.

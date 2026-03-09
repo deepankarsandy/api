@@ -1,5 +1,6 @@
 const ERROR_MESSAGES = {
   USER_CREATE_FAILED: "User creation failed",
+  USER_NOT_FOUND: "User not found",
 } as const;
 
 export { ERROR_MESSAGES };
