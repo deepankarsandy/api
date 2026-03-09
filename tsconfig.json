@@ -39,6 +39,7 @@
       "@commands/*": ["src/application/commands/*"],
       "@queries/*": ["src/application/queries/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
+      "@db/*": ["src/infrastructure/database/*"],
       "@repositories/*": ["src/infrastructure/repositories/*"],
       "@presentation/*": ["src/presentation/*"],
       "@controllers/*": ["src/presentation/http/controllers/*"],

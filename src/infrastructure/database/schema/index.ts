@@ -1,1 +1,11 @@
-export { userProfiles, userProfilesRelations, users, usersRelations } from "./user.schema";
+export {
+  accounts,
+  accountsRelations,
+  sessions,
+  sessionsRelations,
+  userProfiles,
+  userProfilesRelations,
+  users,
+  usersRelations,
+  verifications,
+} from "./user.schema";

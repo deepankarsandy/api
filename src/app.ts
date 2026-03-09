@@ -3,6 +3,7 @@ import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import "reflect-metadata";
 import "@shared/container";
+import { authRoutes } from "@routes/auth.routes";
 import { userRoutes } from "@routes/user.routes";
 import {
   buildApiErrorResponse,
@@ -117,5 +118,6 @@ export const buildApp = () =>
         .get("/health", () => ({
           status: "ok",
         }))
+        .use(authRoutes)
         .use(userRoutes),
     );

@@ -2,16 +2,18 @@ import { describe, expect, test } from "bun:test";
 import { buildApp } from "@/app";
 
 const app = buildApp();
+const testEmail = `johndoe+${Date.now()}@example.com`;
 
 describe("User Flow E2E", () => {
-  test("should create a new user", async () => {
+  test("should sign up a new user", async () => {
     const user = {
+      email: testEmail,
+      password: "securePassword123",
       name: "John Doe",
-      email: "johndoe@example.com",
     };
 
     const res = await app.handle(
-      new Request("http://localhost/api/v1/users", {
+      new Request("http://localhost/api/v1/auth/sign-up", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -20,28 +22,27 @@ describe("User Flow E2E", () => {
       }),
     );
 
-    expect(res.status).toBe(201);
+    expect(res.status).toBe(200);
   });
 
   test("should get a user by email", async () => {
-    const email = "johndoe@example.com";
-    const res = await app.handle(new Request(`http://localhost/api/v1/users/${email}`));
+    const res = await app.handle(new Request(`http://localhost/api/v1/users/${testEmail}`));
     const data = await res.json();
 
     expect(res.status).toBe(200);
-    expect(data.data.email).toBe(email);
+    expect(data.data.email).toBe(testEmail);
   });
 
   test("should return standardized error format on validation error", async () => {
     const res = await app.handle(
-      new Request("http://localhost/api/v1/users", {
+      new Request("http://localhost/api/v1/auth/sign-up", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: 123,
           email: "invalid-email",
+          password: "short",
         }),
       }),
     );

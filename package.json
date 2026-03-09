@@ -22,6 +22,7 @@
   "dependencies": {
     "@elysiajs/cors": "^1.4.1",
     "@elysiajs/swagger": "^1.3.1",
+    "better-auth": "^1.5.4",
     "drizzle-orm": "^0.45.1",
     "elysia": "^1.4.27",
     "reflect-metadata": "^0.2.2",

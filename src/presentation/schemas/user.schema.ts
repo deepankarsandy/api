@@ -1,10 +1,6 @@
 import { USER_ROLE_VALUES } from "@domain/constants/user-role.constant";
 import { t } from "elysia";
 
-export const CreateUserBody = t.Object({
-  email: t.String({ format: "email" }),
-});
-
 export const GetUserParams = t.Object({
   email: t.String({ format: "email" }),
 });
@@ -46,13 +42,8 @@ export const UserResponse = t.Object({
   profiles: t.Array(UserProfileResponse),
 });
 
-export const CreateUserSuccessResponse = t.Object({
-  data: t.Null(),
-});
-
 export const GetUserSuccessResponse = t.Object({
   data: UserResponse,
 });
 
-export type CreateUserBody = typeof CreateUserBody.static;
 export type GetUserParams = typeof GetUserParams.static;

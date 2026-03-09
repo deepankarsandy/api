@@ -1,6 +1,4 @@
-import { CreateUserCommand } from "@commands/user/create-user.command";
 import type { User } from "@entities/user";
-import type { CreateUserHandler } from "@handlers/user/create-user.handler";
 import type { GetUserByEmailHandler } from "@handlers/user/get-user-by-email.handler";
 import { GetUserByEmailQuery } from "@queries/user/get-user-by-email.query";
 import { AppError } from "@shared/types/error.types";
@@ -10,25 +8,7 @@ import { ERROR_MESSAGES } from "@/shared/errors/error-messages.constant";
 
 @injectable()
 export class UserController {
-  constructor(
-    private readonly createUserHandler: CreateUserHandler,
-    private readonly getUserByEmailHandler: GetUserByEmailHandler,
-  ) {}
-
-  async createUser(body: { email: string }): Promise<void> {
-    try {
-      const { email } = body;
-      const command = new CreateUserCommand(email);
-      await this.createUserHandler.handle(command);
-    } catch (error) {
-      throw new AppError("User creation failed", {
-        message: ERROR_MESSAGES.USER_CREATE_FAILED,
-        code: ERROR_CODES.USER_CREATE_FAILED,
-        status: 500,
-        cause: error,
-      });
-    }
-  }
+  constructor(private readonly getUserByEmailHandler: GetUserByEmailHandler) {}
 
   async getUserByEmail(email: string): Promise<User> {
     const query = new GetUserByEmailQuery(email);
