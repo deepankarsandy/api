@@ -23,6 +23,8 @@ export const UserProfileResponse = t.Object({
   themePreference: t.Nullable(t.String()),
   timezone: t.Nullable(t.String()),
   language: t.Nullable(t.String()),
+  createdAt: t.Date(),
+  updatedAt: t.Date(),
 });
 
 export const UserResponse = t.Object({
@@ -37,7 +39,9 @@ export const UserResponse = t.Object({
   ]),
   password: t.String(),
   createdAt: t.Date(),
+  updatedAt: t.Date(),
   lastLoginAt: t.Nullable(t.Date()),
+  lastPasswordChangedAt: t.Nullable(t.Date()),
   banned: t.Boolean(),
   profiles: t.Array(UserProfileResponse),
 });

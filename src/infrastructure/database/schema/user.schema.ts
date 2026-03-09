@@ -9,7 +9,9 @@ export const users = sqliteTable("users", {
   role: text("role", { enum: USER_ROLE_VALUES }).notNull(),
   password: text("password").notNull(),
   createdAt: integer("createdAt", { mode: "timestamp_ms" }).notNull(),
+  updatedAt: integer("updatedAt", { mode: "timestamp_ms" }).notNull(),
   lastLoginAt: integer("lastLoginAt", { mode: "timestamp_ms" }),
+  lastPasswordChangedAt: integer("lastPasswordChangedAt", { mode: "timestamp_ms" }),
   banned: integer("banned", { mode: "boolean" }).notNull().default(false),
 });
 
@@ -28,6 +30,8 @@ export const userProfiles = sqliteTable("user_profiles", {
   themePreference: text("themePreference"),
   timezone: text("timezone"),
   language: text("language"),
+  createdAt: integer("createdAt", { mode: "timestamp_ms" }).notNull(),
+  updatedAt: integer("updatedAt", { mode: "timestamp_ms" }).notNull(),
 });
 
 export const usersRelations = relations(users, ({ many }) => ({

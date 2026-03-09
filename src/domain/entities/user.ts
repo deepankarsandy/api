@@ -8,7 +8,9 @@ export interface User {
   role: UserRole;
   password: string;
   createdAt: Date;
+  updatedAt: Date;
   lastLoginAt: Date | null;
+  lastPasswordChangedAt: Date | null;
   banned: boolean;
   profiles: UserProfile[];
 }

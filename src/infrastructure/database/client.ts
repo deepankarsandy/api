@@ -25,7 +25,9 @@ const expectedUserColumns = [
   "role",
   "password",
   "createdAt",
+  "updatedAt",
   "lastLoginAt",
+  "lastPasswordChangedAt",
   "banned",
 ];
 
@@ -42,6 +44,8 @@ const expectedUserProfileColumns = [
   "themePreference",
   "timezone",
   "language",
+  "createdAt",
+  "updatedAt",
 ];
 
 const existingUserColumns = sqlite.query("PRAGMA table_info(users)").all() as Array<{
@@ -81,7 +85,9 @@ sqlite.run(`
     role TEXT NOT NULL,
     password TEXT NOT NULL,
     createdAt INTEGER NOT NULL,
+    updatedAt INTEGER NOT NULL,
     lastLoginAt INTEGER,
+    lastPasswordChangedAt INTEGER,
     banned INTEGER NOT NULL DEFAULT 0
   );
 
@@ -98,6 +104,8 @@ sqlite.run(`
     themePreference TEXT,
     timezone TEXT,
     language TEXT,
+    createdAt INTEGER NOT NULL,
+    updatedAt INTEGER NOT NULL,
     FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
   );
 `);

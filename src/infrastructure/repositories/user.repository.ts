@@ -14,13 +14,17 @@ const buildProfileName = (parts: Array<string | null>): string =>
 @injectable()
 export class UserRepository implements IUserRepository {
   async create(user: CreateUserInput): Promise<void> {
+    const now = new Date();
+
     await db.insert(users).values({
       email: user.email,
       emailVerified: false,
       role: user.role,
       password: "",
-      createdAt: new Date(),
+      createdAt: now,
+      updatedAt: now,
       lastLoginAt: null,
+      lastPasswordChangedAt: null,
       banned: false,
     });
   }

@@ -12,4 +12,6 @@ export interface UserProfile {
   themePreference: string | null;
   timezone: string | null;
   language: string | null;
+  createdAt: Date;
+  updatedAt: Date;
 }
