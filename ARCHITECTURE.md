@@ -96,5 +96,5 @@ src/infrastructure/database
 - Keep all table definitions in `src/infrastructure/database/schema` to avoid schema logic inside repositories.
 - Repositories should only consume `db` + table schemas and still implement domain interfaces (`IUserRepository`), so application/domain layers remain unchanged.
 - Role constants live in `src/domain/constants/user-role.constant.ts` with allowed values: `admin`, `user`, `moderator`, `super_admin`.
-- Current create-user flow only persists minimum user data (`email`) and backend defaults (`role=admin`, flags/timestamps/password defaults). Profile rows are intentionally created in a separate flow.
+- Current create-user flow persists only `email` plus backend defaults (`role=admin`, flags/timestamps/password defaults). Profile rows are intentionally created in a separate flow.
 - Profile rows store `firstName` (required), `middleName` (optional), and `lastName` (optional). API responses include computed `profile.name` as concatenated full name.

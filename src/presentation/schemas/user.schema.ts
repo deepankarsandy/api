@@ -2,7 +2,6 @@ import { USER_ROLE_VALUES } from "@domain/constants/user-role.constant";
 import { t } from "elysia";
 
 export const CreateUserBody = t.Object({
-  name: t.String({ minLength: 1, maxLength: 100 }),
   email: t.String({ format: "email" }),
 });
 

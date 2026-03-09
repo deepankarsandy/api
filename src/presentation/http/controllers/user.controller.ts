@@ -15,10 +15,10 @@ export class UserController {
     private readonly getUserByEmailHandler: GetUserByEmailHandler,
   ) {}
 
-  async createUser(body: { name: string; email: string }): Promise<void> {
+  async createUser(body: { email: string }): Promise<void> {
     try {
-      const { name, email } = body;
-      const command = new CreateUserCommand(name, email);
+      const { email } = body;
+      const command = new CreateUserCommand(email);
       await this.createUserHandler.handle(command);
     } catch (error) {
       throw new AppError("User creation failed", {
