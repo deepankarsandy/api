@@ -1,16 +1,18 @@
 import type { User } from "@entities/user";
+import { db } from "@infrastructure/database/client";
+import { users } from "@infrastructure/database/schema";
 import type { IUserRepository } from "@interfaces/user-repository.interface";
+import { eq } from "drizzle-orm";
 import { injectable } from "tsyringe";
 
 @injectable()
 export class UserRepository implements IUserRepository {
-  private readonly users: User[] = [];
-
   async create(user: User): Promise<void> {
-    this.users.push(user);
+    await db.insert(users).values(user);
   }
 
   async findByEmail(email: string): Promise<User | null> {
-    return this.users.find((user) => user.email === email) || null;
+    const [user] = await db.select().from(users).where(eq(users.email, email)).limit(1);
+    return user || null;
   }
 }
