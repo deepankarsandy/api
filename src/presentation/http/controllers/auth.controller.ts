@@ -6,17 +6,20 @@ import { ERROR_CODES } from "@/shared/errors/error-codes.constant";
 import { ERROR_MESSAGES } from "@/shared/errors/error-messages.constant";
 
 type HeadersMap = Record<string, string>;
+type IncomingHeaders = Headers;
 
 const buildDefaultName = (email: string): string => {
   const [localPart] = email.split("@");
   return localPart?.trim() || "user";
 };
 
+const toHeadersMap = (headers: Headers): HeadersMap => Object.fromEntries(headers.entries());
+
 @injectable()
 export class AuthController {
   async signUpWithEmailAndPassword(
     body: SignUpWithEmailBody,
-    _incomingHeaders: Record<string, string | undefined>,
+    incomingHeaders: IncomingHeaders,
   ): Promise<{ status: number; headers: HeadersMap; data: any }> {
     try {
       const payload = {
@@ -26,12 +29,18 @@ export class AuthController {
         ...(body.image ? { image: body.image } : {}),
       };
 
+      const response = await auth.api.signUpEmail({
+        body: payload,
+        headers: incomingHeaders,
+        asResponse: true,
+      });
+
+      const data = await response.json();
+
       return {
-        status: 200,
-        headers: {},
-        data: await auth.api.signUpEmail({
-          body: payload,
-        }),
+        status: response.status,
+        headers: toHeadersMap(response.headers),
+        data,
       };
     } catch (error) {
       if (error instanceof AppError) {

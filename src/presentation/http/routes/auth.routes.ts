@@ -10,8 +10,8 @@ const authController = container.resolve(AuthController);
 
 export const authRoutes = new Elysia().post(
   "/auth/sign-up",
-  async ({ body, headers, set }) => {
-    const result = await authController.signUpWithEmailAndPassword(body, headers);
+  async ({ body, request, set }) => {
+    const result = await authController.signUpWithEmailAndPassword(body, request.headers);
     set.status = result.status;
 
     for (const [key, value] of Object.entries(result.headers)) {

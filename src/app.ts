@@ -14,10 +14,18 @@ import {
 import { responseWrapper } from "./shared/response.plugin";
 
 const isProduction = Bun.env.NODE_ENV === "production";
+const allowedOrigins = ["http://localhost:8080", "http://localhost:5173"] as const;
 
 export const buildApp = () =>
   new Elysia()
-    .use(cors())
+    .use(
+      cors({
+        origin: [...allowedOrigins],
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+      }),
+    )
     .use(
       swagger(
         // uncomment for classic view
