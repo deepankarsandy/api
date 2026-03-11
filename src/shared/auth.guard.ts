@@ -48,7 +48,7 @@ const verifyHs256Signature = async (
   return crypto.subtle.verify(
     "HMAC",
     key,
-    decodeBase64UrlToBytes(encodedSignature),
+    decodeBase64UrlToBytes(encodedSignature).buffer as ArrayBuffer,
     new TextEncoder().encode(signingInput),
   );
 };
