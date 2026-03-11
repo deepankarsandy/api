@@ -1,5 +1,5 @@
 import { Database } from "bun:sqlite";
-import { existsSync } from "node:fs";
+import { existsSync, writeFileSync } from "node:fs";
 import { drizzle as drizzleBun } from "drizzle-orm/bun-sqlite";
 import {
   type DatabaseSetup,
@@ -14,14 +14,14 @@ export const createDevelopmentDatabase = (): DatabaseSetup => {
   const databaseUrl = requireDatabaseUrl("development");
   ensureDatabaseDirectory(databaseUrl);
 
-  const client = new Database(":memory:");
+  let client = new Database(":memory:");
 
   if (existsSync(databaseUrl)) {
     const fileDatabase = new Database(databaseUrl);
 
     try {
-      console.log("Restoring database from", databaseUrl);
-      (fileDatabase as Database & { backup(target: Database): void }).backup(client);
+      console.log("Restoring database into memory from ", databaseUrl);
+      client = Database.deserialize(fileDatabase.serialize());
     } finally {
       fileDatabase.close();
     }
@@ -37,13 +37,14 @@ export const createDevelopmentDatabase = (): DatabaseSetup => {
       return;
     }
 
-    const fileDatabase = new Database(databaseUrl);
-
     try {
-      console.log("Backing up database to", databaseUrl);
-      (client as Database & { backup(target: Database): void }).backup(fileDatabase);
+      console.log("Backing up database from memory into ", databaseUrl);
+      // Serialize the database to a Uint8Array
+      const contents = client.serialize();
+
+      // Write the contents to a backup file
+      writeFileSync(databaseUrl, contents);
     } finally {
-      fileDatabase.close();
       client.close();
       isClosed = true;
     }
