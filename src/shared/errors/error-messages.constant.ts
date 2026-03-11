@@ -2,6 +2,7 @@ const ERROR_MESSAGES = {
   USER_CREATE_FAILED: "User creation failed",
   USER_NOT_FOUND: "User not found",
   AUTH_SIGN_UP_FAILED: "Sign-up failed",
+  AUTH_UNAUTHORIZED: "Unauthorized",
 } as const;
 
 export { ERROR_MESSAGES };

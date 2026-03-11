@@ -5,6 +5,7 @@ import "reflect-metadata";
 import "@shared/container";
 import { authRoutes } from "@routes/auth.routes";
 import { userRoutes } from "@routes/user.routes";
+import { jwtAuthGuard } from "@shared/auth.guard";
 import {
   buildApiErrorResponse,
   resolveErrorCode,
@@ -41,6 +42,15 @@ export const buildApp = () =>
               title: "Bun + Elysia Hexagonal API",
               version: "1.0.50",
               description: "Versioned API documentation",
+            },
+            components: {
+              securitySchemes: {
+                bearerAuth: {
+                  type: "http",
+                  scheme: "bearer",
+                  bearerFormat: "JWT",
+                },
+              },
             },
             servers: [
               {
@@ -121,5 +131,5 @@ export const buildApp = () =>
           status: "ok",
         }))
         .use(authRoutes)
-        .use(userRoutes),
+        .group("", (protectedApp) => protectedApp.use(jwtAuthGuard).use(userRoutes)),
     );

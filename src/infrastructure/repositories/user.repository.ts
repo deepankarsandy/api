@@ -1,4 +1,5 @@
 import type { User } from "@entities/user";
+import type { UserProfile } from "@entities/user-profile";
 import { db } from "@infrastructure/database/client";
 import { userProfiles, users } from "@infrastructure/database/schema";
 import type { CreateUserInput, IUserRepository } from "@interfaces/user-repository.interface";
@@ -48,7 +49,7 @@ export class UserRepository implements IUserRepository {
       .from(userProfiles)
       .where(eq(userProfiles.userId, storedUser.id));
 
-    const profiles = storedProfiles.map((profile) => ({
+    const profiles: UserProfile[] = storedProfiles.map((profile: UserProfile) => ({
       ...profile,
       name: buildProfileName([profile.firstName, profile.middleName, profile.lastName]),
     }));
