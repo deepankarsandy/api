@@ -18,6 +18,17 @@ if (databaseUrl !== ":memory:") {
 const sqlite = new Database(databaseUrl, { create: true });
 sqlite.run("PRAGMA foreign_keys = ON;");
 
+/**
+ * Optimized for memory-heavy, low-latency usage.
+ * These settings are for reducing disk writes and use memory first pattern.
+ * Update these for actual deployment.
+ *  */
+sqlite.run("PRAGMA journal_mode = WAL;");
+sqlite.run("PRAGMA synchronous = NORMAL;");
+sqlite.run("PRAGMA cache_size = -64000;");
+sqlite.run("PRAGMA temp_store = MEMORY;");
+sqlite.run("PRAGMA synchronous = NORMAL;"); // remove this for actual production
+
 const expectedUserColumns = [
   "id",
   "name",
