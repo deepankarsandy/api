@@ -44,6 +44,16 @@ To start the production server, run:
 bun start
 ```
 
+## Database
+
+Database setup is environment-specific:
+
+- development restores `DATABASE_URL` into an in-memory SQLite database on startup and writes memory back to disk on shutdown
+- test uses `:memory:` only
+- production keeps the persistent production configuration path
+
+See [DATABASE.md](/Users/deepankar/projects/api/DATABASE.md) for the full database configuration guide and environment file expectations.
+
 ## Linting and Formatting
 
 This project uses [Biome](https://biomejs.dev/) for linting and [Prettier](https://prettier.io/) for formatting.

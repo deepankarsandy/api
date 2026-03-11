@@ -71,7 +71,11 @@ UserRepository (Drizzle + SQLite adapter in infrastructure)
 
 ```
 src/infrastructure/database
- ├ client.ts                  # SQLite connection + Drizzle instance
+ ├ client.ts                  # env selector for db initialization
+ ├ common.ts                  # shared pragmas, schema creation, and helpers
+ ├ development.ts             # dev restore-to-memory + shutdown backup
+ ├ production.ts              # production db initialization
+ ├ test.ts                    # test in-memory db initialization
  ├ schema
  │   ├ index.ts               # schema export barrel
  │   └ user.schema.ts         # users + user_profiles schemas and relations
@@ -82,8 +86,11 @@ src/infrastructure/database
 
 - Dialect: SQLite
 - ORM: Drizzle (`drizzle-orm`)
-- DB file: `./data/app.db` by default
-- Override path using `DATABASE_URL` (for example `DATABASE_URL=:memory:` for ephemeral tests)
+- Development DB file: `./data/dev.db`
+- Test DB: `:memory:`
+- Production DB file: `./data/prod.db`
+- Runtime selection is controlled by `NODE_ENV`
+- Full environment-specific behavior is documented in `DATABASE.md`
 
 - Database guides
 

@@ -12,6 +12,8 @@ import {
 } from "@shared/types/error.types";
 import { responseWrapper } from "./shared/response.plugin";
 
+const isProduction = Bun.env.NODE_ENV === "production";
+
 export const buildApp = () =>
   new Elysia()
     .use(cors())
@@ -63,7 +65,7 @@ export const buildApp = () =>
             withDefaultFonts: true,
             defaultOpenAllTags: false,
             darkMode: true,
-            persistAuth: process.env.NODE_ENV !== "production",
+            persistAuth: !isProduction,
             showDeveloperTools: "never",
             hiddenClients: {
               c: true,
@@ -110,7 +112,7 @@ export const buildApp = () =>
         error,
         code: resolvedCode,
         status,
-        includeStack: process.env.NODE_ENV !== "production",
+        includeStack: !isProduction,
       });
     })
     .group("/api/v1", (app) =>

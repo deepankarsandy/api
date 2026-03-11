@@ -40,8 +40,7 @@ const run = async () => {
     stdout: "inherit",
     stderr: "inherit",
     env: {
-      ...process.env,
-      IN_MEMORY_DB: "true",
+      ...Bun.env,
     },
   });
 
