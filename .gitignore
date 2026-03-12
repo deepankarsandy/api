@@ -43,4 +43,5 @@ yarn-error.log*
 package-lock.json
 **/*.bun
 data/*.db
+data/*.db*
 data/*.sqlite

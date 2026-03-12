@@ -8,6 +8,11 @@ export const responseWrapper = new Elysia({ name: "response-wrapper" }).onAfterH
       return response;
     }
 
+    // Skip native Response passthrough (e.g. better-auth mounted handler)
+    if (response instanceof Response) {
+      return response;
+    }
+
     // Skip non-JSON responses
     if (
       response instanceof Blob ||

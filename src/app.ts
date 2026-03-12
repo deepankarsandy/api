@@ -3,6 +3,7 @@ import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import "reflect-metadata";
 import "@shared/container";
+import { auth } from "@infrastructure/auth/better-auth";
 import { authRoutes } from "@routes/auth.routes";
 import { userRoutes } from "@routes/user.routes";
 import { jwtAuthGuard } from "@shared/auth.guard";
@@ -24,6 +25,7 @@ export const buildApp = () =>
         credentials: true,
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
+        exposeHeaders: ["set-auth-token"],
       }),
     )
     .use(
@@ -138,6 +140,8 @@ export const buildApp = () =>
         .get("/health", () => ({
           status: "ok",
         }))
-        .use(authRoutes)
+        // Better Auth public endpoints
+        .all("/auth", ({ request }) => auth.handler(request))
+        .all("/auth/*", ({ request }) => auth.handler(request))
         .group("", (protectedApp) => protectedApp.use(jwtAuthGuard).use(userRoutes)),
     );

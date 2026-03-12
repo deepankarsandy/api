@@ -8,6 +8,7 @@ const allowedOrigins = ["http://localhost:8080", "http://localhost:5173"] as con
 
 export const auth = betterAuth({
   baseURL: Bun.env.BETTER_AUTH_URL ?? "http://localhost:3000",
+  basePath: "/api/v1/auth",
   trustedOrigins: [...allowedOrigins],
   plugins: [bearer(), jwt()],
   database: drizzleAdapter(db, {
