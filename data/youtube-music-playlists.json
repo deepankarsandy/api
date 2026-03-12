@@ -1,0 +1,550 @@
+{
+  "name": "Deepankar Sandy",
+  "thumbnail": "https://yt3.googleusercontent.com/vM6l_pWtebQse7oADSdehFSXSPZoJRL2HCEDFymsSYrbwrh7nWWl8j9ay1H3G06fbDAz239VLA=w544-c-h544-k-c0x00ffffff-no-l90-rj",
+  "url": "https://music.youtube.com/channel/UCOWnHB_2DxTw9SVxv0LSbvQ",
+  "items": [
+    {
+      "kind": "youtube#playlist",
+      "etag": "gc8y2O6HNCMUqWxsUVwWk1TZ-i4",
+      "id": "PLXRuze1Mb-9hbmcDHfmjTJINnusioKoc8",
+      "snippet": {
+        "publishedAt": "2026-03-10T09:31:26.88979Z",
+        "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
+        "title": "Hindi Feel Good",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CpXgYGXokgI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CpXgYGXokgI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CpXgYGXokgI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/CpXgYGXokgI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/CpXgYGXokgI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandy",
+        "localized": {
+          "title": "Hindi Feel Good",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 44
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "k5uuQbf_yPqlU-C2-WA9Rh38uHg",
+      "id": "PLXRuze1Mb-9gmxJ61bGOSu1Jp8XckFpaF",
+      "snippet": {
+        "publishedAt": "2026-03-04T09:51:43.291867Z",
+        "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
+        "title": "Odia",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DjdJB5wTakM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DjdJB5wTakM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DjdJB5wTakM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/DjdJB5wTakM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/DjdJB5wTakM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandy",
+        "localized": {
+          "title": "Odia",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 20
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "6m2Gswxf1LDcmu1qFBqoG2hYsyo",
+      "id": "PLXRuze1Mb-9g_yR-J8-qzuBfHGu0uarvR",
+      "hidden": true,
+      "snippet": {
+        "publishedAt": "2025-02-13T01:16:53.062298Z",
+        "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
+        "title": "Gym",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TxidHVpm3ws/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TxidHVpm3ws/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TxidHVpm3ws/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/TxidHVpm3ws/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/TxidHVpm3ws/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandy",
+        "localized": {
+          "title": "Gym",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 19
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "QPA8_MBbfutq0-wywnz3vTkc2fo",
+      "id": "PL87dXkRvTYWuDGyzuFVLoFO5ly4UibSWm",
+      "snippet": {
+        "publishedAt": "2026-01-01T05:26:31.01521Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Guitar Riffs",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/RWgTD_0jxeE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/RWgTD_0jxeE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/RWgTD_0jxeE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/RWgTD_0jxeE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/RWgTD_0jxeE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Guitar Riffs",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 14
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "Z40nz5moTyKkCCsvxp0HJZyb9HM",
+      "id": "PL87dXkRvTYWtmd3TIBUbvYXQ5_mcLsUeF",
+      "snippet": {
+        "publishedAt": "2025-11-23T17:57:29.369067Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Slow favs",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Man4Xw8Xypo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Man4Xw8Xypo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Man4Xw8Xypo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Man4Xw8Xypo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Man4Xw8Xypo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Slow favs",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 48
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "LbdknQKcXPkqcQRX6Cq75QXz-fo",
+      "id": "PL87dXkRvTYWtGq1lt6xiMxi-T3DkuSFGa",
+      "snippet": {
+        "publishedAt": "2025-02-04T07:09:51.16451Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "HipHop Sensation",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IxJjY5T9yag/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IxJjY5T9yag/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IxJjY5T9yag/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/IxJjY5T9yag/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/IxJjY5T9yag/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "HipHop Sensation",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 14
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "TTc3iXuIjr0KjtyzTjb71FhxKBE",
+      "id": "PL87dXkRvTYWs9Qye-UfC6-DCC54ZzTkdh",
+      "snippet": {
+        "publishedAt": "2023-04-17T09:15:19.706332Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Bengali Songs",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/J2JQQm1h6xQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/J2JQQm1h6xQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/J2JQQm1h6xQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/J2JQQm1h6xQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/J2JQQm1h6xQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Bengali Songs",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 11
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "O0vzmPFM5PitdsNFP0Um4BIJNtA",
+      "id": "PL87dXkRvTYWv-FuRx0i9O7U-_P_Plec3v",
+      "snippet": {
+        "publishedAt": "2022-02-09T15:21:06.176363Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Hindi music",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/o-CLed_7rCQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/o-CLed_7rCQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/o-CLed_7rCQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/o-CLed_7rCQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/o-CLed_7rCQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Hindi music",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 45
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "YkWW2_PoYI9z0tFxPwwxm5xbgjI",
+      "id": "PL87dXkRvTYWufFKHKiOITxswnnW2hFxok",
+      "snippet": {
+        "publishedAt": "2020-06-27T03:24:55.67295Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Liked songs",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FjpX3cA36G0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FjpX3cA36G0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FjpX3cA36G0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/FjpX3cA36G0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/FjpX3cA36G0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Liked songs",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 102
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "jLeeLozJhtoaQ7tSomQgqhJLlvc",
+      "id": "PL87dXkRvTYWuq-GPGcMRt8Hp8tw-hkMhN",
+      "snippet": {
+        "publishedAt": "2020-04-28T13:40:49.642684Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Sex Education Tracks",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OG1PKBTC0t0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OG1PKBTC0t0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OG1PKBTC0t0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/OG1PKBTC0t0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/OG1PKBTC0t0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Sex Education Tracks",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 48
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "NS0ou4DL-aF08t8pJ3K9T49_0Gw",
+      "id": "PL87dXkRvTYWt93bgBHXMDNuyRzWtCt1S6",
+      "snippet": {
+        "publishedAt": "2020-01-06T13:29:50.947847Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "Zen",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xm_rkTSTvWs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xm_rkTSTvWs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xm_rkTSTvWs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/xm_rkTSTvWs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/xm_rkTSTvWs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "Zen",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 2
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "xzwIV0WrW0zgDN-S1LqKfBGWiy4",
+      "id": "PL87dXkRvTYWu-3nlTfApZRphtsobFSTCr",
+      "snippet": {
+        "publishedAt": "2018-03-02T11:40:41.429283Z",
+        "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
+        "title": "500 Days Of Summer Songs",
+        "description": "(500) Days Of Summer is a 2009 movie about how a boy met a girl. But you should know up front, it's not a love story. 😀",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6q0NdYtQBg0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6q0NdYtQBg0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6q0NdYtQBg0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Deepankar Sandhibigraha",
+        "localized": {
+          "title": "500 Days Of Summer Songs",
+          "description": "(500) Days Of Summer is a 2009 movie about how a boy met a girl. But you should know up front, it's not a love story. 😀"
+        }
+      },
+      "contentDetails": {
+        "itemCount": 17
+      }
+    }
+  ]
+}

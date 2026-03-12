@@ -5,6 +5,7 @@ import "reflect-metadata";
 import "@shared/container";
 import { auth } from "@infrastructure/auth/better-auth";
 import { userRoutes } from "@routes/user.routes";
+import { youtubeRoutes } from "@routes/youtube.routes";
 import { jwtAuthGuard } from "@shared/auth.guard";
 import {
   buildApiErrorResponse,
@@ -142,5 +143,7 @@ export const buildApp = () =>
         // Better Auth public endpoints (sign-up, sign-in, sign-out, session, etc.)
         .all("/auth", ({ request }) => auth.handler(request))
         .all("/auth/*", ({ request }) => auth.handler(request))
-        .group("", (protectedApp) => protectedApp.use(jwtAuthGuard).use(userRoutes)),
+        .group("", (protectedApp) =>
+          protectedApp.use(jwtAuthGuard).use(userRoutes).use(youtubeRoutes),
+        ),
     );
