@@ -1,5 +1,5 @@
-import { createClient as createLibsqlClient } from "@libsql/client";
-import { drizzle as drizzleLibsql } from "drizzle-orm/libsql";
+import Database from "bun:sqlite";
+import { drizzle as drizzleBun } from "drizzle-orm/bun-sqlite";
 import {
   type DatabaseSetup,
   ensureDatabaseDirectory,
@@ -14,12 +14,13 @@ export const createProductionDatabase = (): DatabaseSetup => {
 
   ensureDatabaseDirectory(databaseUrl);
 
-  const client = createLibsqlClient({ url: databaseUrl });
+  const client = new Database(databaseUrl);
+
   runPragmas(client);
   runSchemaCreation(client);
 
   return {
     client,
-    db: drizzleLibsql(client, { schema }),
+    db: drizzleBun(client, { schema }),
   };
 };
