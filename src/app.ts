@@ -4,7 +4,6 @@ import { Elysia } from "elysia";
 import "reflect-metadata";
 import "@shared/container";
 import { auth } from "@infrastructure/auth/better-auth";
-import { authRoutes } from "@routes/auth.routes";
 import { userRoutes } from "@routes/user.routes";
 import { jwtAuthGuard } from "@shared/auth.guard";
 import {
@@ -140,7 +139,7 @@ export const buildApp = () =>
         .get("/health", () => ({
           status: "ok",
         }))
-        // Better Auth public endpoints
+        // Better Auth public endpoints (sign-up, sign-in, sign-out, session, etc.)
         .all("/auth", ({ request }) => auth.handler(request))
         .all("/auth/*", ({ request }) => auth.handler(request))
         .group("", (protectedApp) => protectedApp.use(jwtAuthGuard).use(userRoutes)),
