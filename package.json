@@ -10,7 +10,7 @@
     "test:coverage": "bun run scripts/run-tests.ts all --coverage",
     "dev": "bun run --watch src/index.ts",
     "dev:debug": "bun --inspect --watch src/index.ts",
-    "start": "bun run src/index.ts",
+    "start": "NODE_ENV=production bun run src/index.ts",
     "db:generate": "drizzle-kit generate --config drizzle.config.ts",
     "db:migrate": "drizzle-kit migrate --config drizzle.config.ts",
     "db:studio": "drizzle-kit studio --config drizzle.config.ts",
