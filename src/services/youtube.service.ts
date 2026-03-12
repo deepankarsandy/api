@@ -5,6 +5,7 @@ const PLAYLISTS_FILE_PATH = new URL("../../data/youtube-music-playlists.json", i
 const CACHE_TTL_MS = 60 * 60 * 1000;
 const PLAYLIST_ITEMS_LIMIT = 500;
 const YOUTUBE_API_MAX_RESULTS = 50;
+const APP_URL = process.env.APP_URL || "http://localhost:3000";
 
 type CachedValue<T> = {
   expiresAt: number;
@@ -79,7 +80,14 @@ export class YoutubeService {
         requestUrl.searchParams.set("pageToken", nextPageToken);
       }
 
-      const response = await fetch(requestUrl.toString());
+      const response = await fetch(requestUrl.toString(), {
+        headers: {
+          // Use the 'Referer' header to satisfy Google's Website restriction
+          Referer: APP_URL,
+          Origin: APP_URL,
+          Accept: "application/json",
+        },
+      });
       if (!response.ok) {
         throw new AppError("Failed to fetch playlist items", {
           message: `YouTube API request failed with status ${response.status}`,
