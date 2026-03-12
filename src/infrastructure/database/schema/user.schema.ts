@@ -76,6 +76,14 @@ export const verifications = sqliteTable("verifications", {
   updatedAt: integer("updatedAt", { mode: "timestamp_ms" }).notNull(),
 });
 
+export const jwks = sqliteTable("jwks", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  publicKey: text("publicKey").notNull(),
+  privateKey: text("privateKey").notNull(),
+  createdAt: integer("createdAt", { mode: "timestamp_ms" }).notNull(),
+  expiresAt: integer("expiresAt", { mode: "timestamp_ms" }),
+});
+
 export const usersRelations = relations(users, ({ many }) => ({
   profiles: many(userProfiles),
   accounts: many(accounts),

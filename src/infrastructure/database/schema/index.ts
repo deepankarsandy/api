@@ -1,6 +1,7 @@
 export {
   accounts,
   accountsRelations,
+  jwks,
   sessions,
   sessionsRelations,
   userProfiles,

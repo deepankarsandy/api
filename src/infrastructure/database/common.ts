@@ -144,6 +144,19 @@ export const runSchemaCreation = (dbInstance: DatabaseClient) => {
       );
     `,
   );
+
+  executeStatement(
+    dbInstance,
+    `
+      CREATE TABLE IF NOT EXISTS jwks (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          publicKey TEXT NOT NULL,
+          privateKey TEXT NOT NULL,
+          createdAt INTEGER NOT NULL,
+          expiresAt INTEGER
+      );
+    `,
+  );
 };
 
 export { schema };
