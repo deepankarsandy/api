@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "API: Debug Server (Bun)",
+      "name": "API: Debug",
       "type": "bun",
       "request": "launch",
       "program": "${workspaceFolder}/src/index.ts",
@@ -11,6 +11,19 @@
       "watchMode": false,
       "env": {
         "PORT": "3001"
+      }
+    },
+    {
+      "name": "API: Debug - Production",
+      "type": "bun",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/index.ts",
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false,
+      "watchMode": false,
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "3000"
       }
     },
     {

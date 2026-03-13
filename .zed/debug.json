@@ -1,0 +1,33 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "label": "API: Debug",
+    "adapter": "JavaScript",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceFolder}/src/index.ts",
+    "cwd": "${workspaceFolder}",
+    "stopOnEntry": false,
+    "watchMode": false,
+    "env": {
+      "PORT": "3001"
+    }
+  },
+  {
+    "label": "API: Debug - Production",
+    "adapter": "JavaScript",
+    "type": "node-terminal",
+    "request": "launch",
+    "program": "${workspaceFolder}/src/index.ts",
+    "cwd": "${workspaceFolder}",
+    "stopOnEntry": false,
+    "watchMode": false,
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "3000"
+    }
+  }
+]

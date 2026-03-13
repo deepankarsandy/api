@@ -145,8 +145,8 @@ export const buildApp = () =>
           status: "ok",
         }))
         // Better Auth public endpoints (sign-up, sign-in, sign-out, session, etc.)
-        .all("/auth", ({ request }) => auth.handler(request))
         .all("/auth/*", ({ request }) => auth.handler(request))
+        .all("/auth", ({ request }) => auth.handler(request))
         .group("", (protectedApp) =>
           protectedApp.use(jwtAuthGuard).use(userRoutes).use(youtubeRoutes),
         ),

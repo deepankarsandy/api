@@ -29,6 +29,7 @@ export class YoutubeService {
     const cacheKey = "youtube:playlists";
     const cached = this.getFromCache<unknown[]>(cacheKey);
     if (cached) {
+      console.log("Using playlist", cacheKey);
       return cached;
     }
 
@@ -52,6 +53,7 @@ export class YoutubeService {
     const cacheKey = `youtube:playlist-items:${normalizedPlaylistId}`;
     const cached = this.getFromCache<unknown[]>(cacheKey);
     if (cached) {
+      console.log("Using cached playlist items", cacheKey);
       return cached;
     }
 
@@ -89,6 +91,7 @@ export class YoutubeService {
         },
       });
       if (!response.ok) {
+        console.error("Failed to fetch playlist items", response.status, response);
         throw new AppError("Failed to fetch playlist items", {
           message: `YouTube API request failed with status ${response.status}`,
           status: response.status,
