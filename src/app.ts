@@ -15,7 +15,11 @@ import {
 import { responseWrapper } from "./shared/response.plugin";
 
 const isProduction = Bun.env.NODE_ENV === "production";
-const allowedOrigins = ["http://localhost:8080", "http://localhost:5173"] as const;
+const allowedOrigins = [
+  "http://localhost:8080",
+  "http://sandyhome.local",
+  "https://deepankar.ddns.net",
+] as const;
 
 export const buildApp = () =>
   new Elysia()

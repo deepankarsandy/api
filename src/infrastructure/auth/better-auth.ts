@@ -4,7 +4,11 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { bearer, jwt } from "better-auth/plugins";
 
-const allowedOrigins = ["http://localhost:8080", "http://localhost:5173"] as const;
+const allowedOrigins = [
+  "http://localhost:8080",
+  "http://sandyhome.local",
+  "https://deepankar.ddns.net",
+] as const;
 
 export const auth = betterAuth({
   baseURL: Bun.env.BETTER_AUTH_URL ?? "http://localhost:3000",
