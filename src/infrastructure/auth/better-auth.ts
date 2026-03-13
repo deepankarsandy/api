@@ -5,7 +5,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { bearer, jwt } from "better-auth/plugins";
 
 const allowedOrigins = [
-  "http://localhost:8080",
+  "http://localhost:*",
   "http://sandyhome.local",
   "https://deepankar.ddns.net",
 ] as const;

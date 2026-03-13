@@ -16,16 +16,16 @@ import { responseWrapper } from "./shared/response.plugin";
 
 const isProduction = Bun.env.NODE_ENV === "production";
 const allowedOrigins = [
-  "http://localhost:8080",
+  /^http:\/\/localhost(:\d+)?$/,
   "http://sandyhome.local",
   "https://deepankar.ddns.net",
-] as const;
+];
 
 export const buildApp = () =>
   new Elysia()
     .use(
       cors({
-        origin: [...allowedOrigins],
+        origin: allowedOrigins,
         credentials: true,
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
