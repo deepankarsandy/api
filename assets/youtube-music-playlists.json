@@ -7,6 +7,7 @@
       "kind": "youtube#playlist",
       "etag": "gc8y2O6HNCMUqWxsUVwWk1TZ-i4",
       "id": "PLXRuze1Mb-9hbmcDHfmjTJINnusioKoc8",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2026-03-10T09:31:26.88979Z",
         "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
@@ -45,6 +46,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 44
       }
@@ -53,6 +57,7 @@
       "kind": "youtube#playlist",
       "etag": "k5uuQbf_yPqlU-C2-WA9Rh38uHg",
       "id": "PLXRuze1Mb-9gmxJ61bGOSu1Jp8XckFpaF",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2026-03-04T09:51:43.291867Z",
         "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
@@ -91,6 +96,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 20
       }
@@ -99,7 +107,7 @@
       "kind": "youtube#playlist",
       "etag": "6m2Gswxf1LDcmu1qFBqoG2hYsyo",
       "id": "PLXRuze1Mb-9g_yR-J8-qzuBfHGu0uarvR",
-      "hidden": true,
+      "order": 1000,
       "snippet": {
         "publishedAt": "2025-02-13T01:16:53.062298Z",
         "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
@@ -138,14 +146,118 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "private"
+      },
       "contentDetails": {
         "itemCount": 19
       }
     },
     {
       "kind": "youtube#playlist",
+      "etag": "NxRPwPIRhfcdodlkhbLkRAg2V5w",
+      "id": "PLXRuze1Mb-9iyP1LU64KlJHmqo_JRkvCu",
+      "order": 1000,
+      "snippet": {
+        "publishedAt": "2025-03-02T01:42:49.618785Z",
+        "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
+        "title": "Bollywood Old",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/g6RT1Sy8Tso/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/g6RT1Sy8Tso/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/g6RT1Sy8Tso/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/g6RT1Sy8Tso/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/g6RT1Sy8Tso/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandy",
+        "localized": {
+          "title": "Bollywood Old",
+          "description": ""
+        }
+      },
+      "status": {
+        "privacyStatus": "public"
+      },
+      "contentDetails": {
+        "itemCount": 29
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "r-iYRxjc9t6XFdVfwGz9c-qTOC8",
+      "id": "PLXRuze1Mb-9iRQdjkPfqj4_f5u_56mdxG",
+      "order": 2,
+      "snippet": {
+        "publishedAt": "2025-02-08T08:23:16.488204Z",
+        "channelId": "UCOWnHB_2DxTw9SVxv0LSbvQ",
+        "title": "Classic Rocks",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/49FB9hhoO6c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/49FB9hhoO6c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/49FB9hhoO6c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/49FB9hhoO6c/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/49FB9hhoO6c/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Deepankar Sandy",
+        "localized": {
+          "title": "Classic Rocks",
+          "description": ""
+        }
+      },
+      "status": {
+        "privacyStatus": "public"
+      },
+      "contentDetails": {
+        "itemCount": 46
+      }
+    },
+    {
+      "kind": "youtube#playlist",
       "etag": "QPA8_MBbfutq0-wywnz3vTkc2fo",
       "id": "PL87dXkRvTYWuDGyzuFVLoFO5ly4UibSWm",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2026-01-01T05:26:31.01521Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -184,6 +296,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 14
       }
@@ -192,6 +307,7 @@
       "kind": "youtube#playlist",
       "etag": "Z40nz5moTyKkCCsvxp0HJZyb9HM",
       "id": "PL87dXkRvTYWtmd3TIBUbvYXQ5_mcLsUeF",
+      "order": 1,
       "snippet": {
         "publishedAt": "2025-11-23T17:57:29.369067Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -230,6 +346,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 48
       }
@@ -238,6 +357,7 @@
       "kind": "youtube#playlist",
       "etag": "LbdknQKcXPkqcQRX6Cq75QXz-fo",
       "id": "PL87dXkRvTYWtGq1lt6xiMxi-T3DkuSFGa",
+      "order": 3,
       "snippet": {
         "publishedAt": "2025-02-04T07:09:51.16451Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -276,6 +396,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 14
       }
@@ -284,6 +407,7 @@
       "kind": "youtube#playlist",
       "etag": "TTc3iXuIjr0KjtyzTjb71FhxKBE",
       "id": "PL87dXkRvTYWs9Qye-UfC6-DCC54ZzTkdh",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2023-04-17T09:15:19.706332Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -322,6 +446,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 11
       }
@@ -330,6 +457,7 @@
       "kind": "youtube#playlist",
       "etag": "O0vzmPFM5PitdsNFP0Um4BIJNtA",
       "id": "PL87dXkRvTYWv-FuRx0i9O7U-_P_Plec3v",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2022-02-09T15:21:06.176363Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -368,6 +496,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 45
       }
@@ -376,6 +507,7 @@
       "kind": "youtube#playlist",
       "etag": "YkWW2_PoYI9z0tFxPwwxm5xbgjI",
       "id": "PL87dXkRvTYWufFKHKiOITxswnnW2hFxok",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2020-06-27T03:24:55.67295Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -414,6 +546,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "private"
+      },
       "contentDetails": {
         "itemCount": 102
       }
@@ -422,6 +557,7 @@
       "kind": "youtube#playlist",
       "etag": "jLeeLozJhtoaQ7tSomQgqhJLlvc",
       "id": "PL87dXkRvTYWuq-GPGcMRt8Hp8tw-hkMhN",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2020-04-28T13:40:49.642684Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -460,6 +596,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 48
       }
@@ -468,6 +607,7 @@
       "kind": "youtube#playlist",
       "etag": "NS0ou4DL-aF08t8pJ3K9T49_0Gw",
       "id": "PL87dXkRvTYWt93bgBHXMDNuyRzWtCt1S6",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2020-01-06T13:29:50.947847Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -506,6 +646,9 @@
           "description": ""
         }
       },
+      "status": {
+        "privacyStatus": "public"
+      },
       "contentDetails": {
         "itemCount": 2
       }
@@ -514,6 +657,7 @@
       "kind": "youtube#playlist",
       "etag": "xzwIV0WrW0zgDN-S1LqKfBGWiy4",
       "id": "PL87dXkRvTYWu-3nlTfApZRphtsobFSTCr",
+      "order": 1000,
       "snippet": {
         "publishedAt": "2018-03-02T11:40:41.429283Z",
         "channelId": "UCq6np7VtiyqLLQeBdUfafqg",
@@ -541,6 +685,9 @@
           "title": "500 Days Of Summer Songs",
           "description": "(500) Days Of Summer is a 2009 movie about how a boy met a girl. But you should know up front, it's not a love story. 😀"
         }
+      },
+      "status": {
+        "privacyStatus": "public"
       },
       "contentDetails": {
         "itemCount": 17

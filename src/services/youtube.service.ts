@@ -1,7 +1,7 @@
 import { AppError } from "@shared/types/error.types";
 import { injectable } from "tsyringe";
 
-const PLAYLISTS_FILE_PATH = new URL("../../data/youtube-music-playlists.json", import.meta.url);
+const PLAYLISTS_FILE_PATH = new URL("../../assets/youtube-music-playlists.json", import.meta.url);
 const CACHE_TTL_MS = 60 * 60 * 1000;
 const PLAYLIST_ITEMS_LIMIT = 500;
 const YOUTUBE_API_MAX_RESULTS = 50;
@@ -12,12 +12,80 @@ type CachedValue<T> = {
   value: T;
 };
 
+type TThumbnail = {
+  url: string;
+  width: number;
+  height: number;
+};
+
+type TThumbnails = {
+  default: TThumbnail;
+  medium: TThumbnail;
+  high: TThumbnail;
+  standard?: TThumbnail;
+  maxres?: TThumbnail;
+};
+
+export type TYouTubePlaylist = {
+  kind: string;
+  etag: string;
+  id: string;
+  order: number;
+  snippet: {
+    publishedAt: string;
+    channelId: string;
+    title: string;
+    description: string;
+    thumbnails: TThumbnails;
+    channelTitle: string;
+    localized: {
+      title: string;
+      description: string;
+    };
+  };
+  status: {
+    privacyStatus: "public" | "private" | "unlisted";
+  };
+  contentDetails: {
+    itemCount: number;
+  };
+};
+
+export type TYouTubePlaylistItem = {
+  kind: string;
+  etag: string;
+  id: string;
+  snippet: {
+    publishedAt: string;
+    channelId: string;
+    title: string;
+    description: string;
+    thumbnails: TThumbnails;
+    channelTitle: string;
+    playlistId: string;
+    position: number;
+    resourceId: {
+      kind: string;
+      videoId: string;
+    };
+    videoOwnerChannelTitle: string;
+    videoOwnerChannelId: string;
+  };
+  contentDetails: {
+    videoId: string;
+    videoPublishedAt: string;
+  };
+  status: {
+    privacyStatus: "public" | "private" | "unlisted";
+  };
+};
+
 type YoutubePlaylistsFile = {
-  items?: unknown[];
+  items?: TYouTubePlaylist[];
 };
 
 type YoutubePlaylistItemsResponse = {
-  items?: unknown[];
+  items?: TYouTubePlaylistItem[];
   nextPageToken?: string;
 };
 
@@ -34,7 +102,11 @@ export class YoutubeService {
     }
 
     const fileData = (await Bun.file(PLAYLISTS_FILE_PATH).json()) as YoutubePlaylistsFile;
-    const items = Array.isArray(fileData?.items) ? fileData.items : [];
+    const items = Array.isArray(fileData?.items)
+      ? fileData.items
+          .filter((pl) => pl.status.privacyStatus !== "private")
+          .sort((a, b) => a.order - b.order)
+      : [];
 
     this.setCache(cacheKey, items);
     return items;
@@ -66,7 +138,7 @@ export class YoutubeService {
       });
     }
 
-    const collectedItems: unknown[] = [];
+    const collectedItems: TYouTubePlaylistItem[] = [];
     let nextPageToken: string | undefined;
 
     while (collectedItems.length < PLAYLIST_ITEMS_LIMIT) {
@@ -109,7 +181,9 @@ export class YoutubeService {
       }
     }
 
-    const items = collectedItems.slice(0, PLAYLIST_ITEMS_LIMIT);
+    const items = collectedItems
+      .slice(0, PLAYLIST_ITEMS_LIMIT)
+      .sort((a, b) => a.snippet.position - b.snippet.position);
     this.setCache(cacheKey, items);
     return items;
   }

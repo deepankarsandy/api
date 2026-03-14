@@ -1,23 +1,15 @@
-import { Database } from "bun:sqlite";
+import type { Database } from "bun:sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
-import type { Client as LibsqlClient } from "@libsql/client";
 import * as schema from "./schema";
-
-export type DatabaseClient = Database | LibsqlClient;
 
 export type DatabaseSetup = {
   db: any;
-  client: DatabaseClient;
+  client: Database;
 };
 
-const executeStatement = (dbInstance: DatabaseClient, sql: string) => {
-  if (dbInstance instanceof Database) {
-    dbInstance.run(sql);
-    return;
-  }
-
-  dbInstance.execute(sql);
+const executeStatement = (dbInstance: Database, sql: string) => {
+  dbInstance.run(sql);
 };
 
 export const ensureDatabaseDirectory = (databaseUrl: string) => {
@@ -34,7 +26,7 @@ export const requireDatabaseUrl = (environment: string) => {
   return databaseUrl;
 };
 
-export const runPragmas = (dbInstance: DatabaseClient) => {
+export const runPragmas = (dbInstance: Database) => {
   const pragmas = [
     "PRAGMA foreign_keys = ON;",
     "PRAGMA journal_mode = WAL;",
@@ -48,7 +40,7 @@ export const runPragmas = (dbInstance: DatabaseClient) => {
   }
 };
 
-export const runSchemaCreation = (dbInstance: DatabaseClient) => {
+export const runSchemaCreation = (dbInstance: Database) => {
   executeStatement(
     dbInstance,
     `

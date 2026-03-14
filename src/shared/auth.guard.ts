@@ -11,7 +11,11 @@ const unauthorizedError = () =>
     status: 401,
   });
 
-const authGuardSkipPathPatterns: RegExp[] = [/^\/api\/v1\/auth(?:\/|$)/, /^\/api\/v1\/health/];
+const authGuardSkipPathPatterns: RegExp[] = [
+  /^\/api\/v1\/auth(?:\/|$)/,
+  /^\/api\/v1\/health/,
+  /^\/api\/v1\/youtube\/.*/,
+];
 
 export const jwtAuthGuard = new Elysia({ name: "jwt-auth-guard" }).onRequest(
   async ({ request }) => {
